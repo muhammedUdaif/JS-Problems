@@ -1,0 +1,40 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container{
+   display: flex;
+   justify-content: center;
+   width: 100vw;
+   height: 100vh;
+}
+#plus, #minus, #set {
+    margin-left: 5px;
+    padding: 10px 20px;
+    display: flex;
+   align-items: center;
+}
+.sub-container{
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-label{
+    margin-right: 10px;
+}
+.unorder-list-container{
+    list-style: none;
+    display: ruby;
+}
+.unorder-list-check-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+.pending-btn{
+    margin-left: 5px;
+}

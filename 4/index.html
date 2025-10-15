@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sub-container">
+            <label for="input-name" class="input-label">Name:</label>
+            <input type="text" class="input-text" id="input-name" onchange="handleInputValues()">
+            <button class="pending-btn">Show Pending</button>
+        </div>
+        <ul class="unorder-list-container">
+            <input type="checkbox" class="unorder-list-check-box">
+            <li id="list-items"></li>
+        </ul>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
