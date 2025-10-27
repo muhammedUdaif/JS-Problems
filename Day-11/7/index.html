@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <style>
+  body {
+    margin: 40px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+  }
+  li {
+    width: 100px;                 
+    white-space: nowrap;          
+    overflow: hidden;              
+    text-overflow: ellipsis;       
+    border: 1px solid #fff;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: default;
+    position: relative;
+    background: gray;
+  }
+  .tooltip {
+    position: fixed;
+    background: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 10;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<h2>ordered list items</h2>
+
+<ul id="itemList">
+  <li>muhammed udaif</li>
+  <li>yedhu krishnnan</li>
+  <li>Prabhath</li>
+</ul>
+
+<div class="tooltip"></div>
+
+<script src="index.js"></script>
+</body>
+</html>
