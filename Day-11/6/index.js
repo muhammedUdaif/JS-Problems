@@ -7,15 +7,22 @@
 // Output: [2, 5, 7, 8] or [0, 5, 7, 8]
 
 function highOrder(arr) {
-    let result = [];
-    let largest = arr[0];
-    result.push(largest);
-    for(let i=0; i< arr.length; i++) {
-        if(arr[i] > largest) {
-            result.push(arr[i])
-            largest = arr[i];
+    let longest = [];
+
+    function helper(start, seq) {
+        if (seq.length > longest.length) {
+            longest = [...seq];
+        }
+        for (let i = start; i < arr.length; i++) {
+            if (seq.length === 0 || arr[i] > seq[seq.length - 1]) {
+                helper(i + 1, [...seq, arr[i]]);
+            }
         }
     }
-    return result
+    
+    helper(0, []);
+    return longest;
 }
-console.log(highOrder([6, 9, 2, 0, 5, 7, 8, 2, 8]));
+
+console.log(highOrder([10, 20, 15, 30, 22, 40])); 
+console.log(highOrder([6, 9, 2, 0, 5, 7, 8, 2, 8])); 
