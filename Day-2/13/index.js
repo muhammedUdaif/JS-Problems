@@ -20,3 +20,28 @@ function logestWord(arr) {
    return longest;
 }
 console.log(logestWord(["programming", "is", "fun"]));
+
+const testLogestWord = [
+    {input:["cat", "dog", "elephant", "tiger"], expected: "elephant"},
+    {input:["apple", "banana", "orange"], expected: "banana"},
+    {input:["programming", "is", "fun"], expected: "programming"},
+    {input:["java", "javascript", "react"], expected: "javascript"},
+    {input:["wayanad", "kozhikode", "kottayam"], expected: "kozhikode"},
+    {input:["programing", "debugging", "testing"], expected: "programing"},
+    {input:["enjoying", "learning", "everytime"], expected: "everytime"},
+    {input:["daily", "status", "reports"], expected: "reports"},
+    {input:["consectetur", "dolor", "Lorem"], expected: "consectetur"},
+    {input:["adipisicing", "elit", "rerum"], expected: "adipisicing"},
+    {input:["mollitia", "cum", "quo"], expected: "mollitia"},
+    {input:["placeat", "dolores", "dignissimos"], expected: "dignissimos"},
+    {input:["voluptate", "minima", "nam"], expected: "voluptate"},
+    {input:[1, 2, 388], expected: 388},
+    {input:123, expected: 123},
+]
+
+testLogestWord.forEach((test, index) => {
+    const actual = logestWord(test.input);
+    const result = actual === test.expected ? "Passed" : "Failed";
+
+    console.log(`Test Case ${index + 1} : ${result}`)
+})

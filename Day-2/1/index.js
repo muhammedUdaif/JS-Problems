@@ -22,3 +22,29 @@ function isPrime(num) {
 console.log(isPrime(9));
 
 // test case
+
+const testPrime = [
+    {input:1, expected: false},
+    {input:2, expected: true},
+    {input:3, expected: true},
+    {input:4, expected: false},
+    {input:5, expected: true},
+    {input:6, expected: false},
+    {input:7, expected: true},
+    {input:8, expected: false},
+    {input:9, expected: false},
+    {input:10, expected: false},
+    {input:11, expected: true},
+    {input:12, expected: false},
+    {input:13, expected: true},
+    {input:14, expected: false},
+    {input:15, expected: false},
+]
+
+testPrime.forEach((test, index) => {
+  const actual = isPrime(test.input);
+  const result = actual === test.expected ? "Passed" : "Failed";
+
+  console.log(`Test Case ${index + 1}: ${result}`);
+  console.log(`  Input: ${JSON.stringify(test.input)}`);
+});

@@ -20,4 +20,32 @@ function arrEven(arr) {
     return result
 }
 
-console.log(arrEven([2, 4, 6, 8, 10]));
+console.log(arrEven([1, 2, 3, 4, 5, 6]));
+
+// test case 
+
+const testArrEven = [
+  {input: [1, 2, 3, 4, 5, 6], expected: [2,4,6]},
+  {input: [7, 8, 9, 10, 11, 12], expected: [8, 10, 12]},
+  {input: [2, 4, 6, 8, 10], expected: [2, 4, 6, 8, 10]},
+  {input: [1, 2, 3], expected: [2]},
+  {input: [3, 4, 5, 6], expected: [4,6]},
+  {input: [1, 4, 5, 6], expected: [4,6]},
+  {input: [7, 8, 9, 10, 11], expected: [8, 10]},
+  {input: [7, 8, 9, 10], expected: [8, 10]},
+  {input: [9, 10, 11, 12], expected: [10, 12]},
+  {input: [7, 8, 9, 11, 12], expected: [8,12]},
+  {input: [2, 4, 6], expected: [2, 4, 6]},
+  {input: [2, 4, 6, 8], expected: [2, 4, 6, 8]},
+  {input: [6, 8, 10], expected: [6, 8, 10]},
+  {input: [2, 4, 8, 10], expected: [2, 4, 8, 10]},
+  {input: [11,23,45,12], expected: [12]},
+]
+
+
+testArrEven.forEach((test, index) => {
+  const actual = arrEven(test.input);
+  const result1 = JSON.stringify(actual) === JSON.stringify(test.expected) ? "Passed" : "Failed";
+
+  console.log(`Test Case ${index + 1}: ${result1}`);
+})
