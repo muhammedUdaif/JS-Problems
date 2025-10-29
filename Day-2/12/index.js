@@ -12,7 +12,7 @@
 
 function product(arr) {
     if(typeof(arr) !== "object") {
-      return "The type of the input value must be object type not the other types";
+      return false;
     }
     let n = arr.length;
     if(n < 3) {
@@ -38,8 +38,8 @@ const testProduct = [
   {input: [5, -2, -3, -1, -7], expected: 10},
   {input: [4, -2, -3, 0, -5], expected: 0},
   {input: [-12, -23, -3, -4, -5], expected: -60},
-  {input: "programing", expected: -6},
-  {input: 12345, expected: -6},
+  {input: "programing", expected: false},
+  {input: 12345, expected: false},
 ]
 
 testProduct.forEach((test, index) => {
