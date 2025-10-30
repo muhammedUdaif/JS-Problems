@@ -5,12 +5,41 @@
 // 	- Seniors (age 60 and over): $15
 
 function getTicketPrice(age) {
+    if(typeof(age) !== "number") {
+        return false;
+    }
     if(age <= 12) {
-        console.log("The ticket price is $10 only")
+        return `The ticket price is $10`
     }else if(age >= 13 && age <= 59) {
-        console.log("The ticket price is $20");
+        return `The ticket price is $20`
     }else {
-        console.log("The ticket Price is $15")
+        return `The ticket price is $15`
     }
 }
-getTicketPrice(60);
+console.log(getTicketPrice(87));
+
+const testGetTicketPrice = [
+    {input: 60, expected: "The ticket price is $15"},
+    {input: 43, expected: "The ticket price is $20"},
+    {input: 23, expected: "The ticket price is $20"},
+    {input: 21, expected: "The ticket price is $20"},
+    {input: 34, expected: "The ticket price is $20"},
+    {input: 11, expected: "The ticket price is $10"},
+    {input: 7, expected: "The ticket price is $10"},
+    {input: 87, expected: "The ticket price is $15"},
+    {input: 54, expected: "The ticket price is $20"},
+    {input: 24, expected: "The ticket price is $20"},
+    {input: 56, expected: "The ticket price is $20"},
+    {input: 46, expected: "The ticket price is $20"},
+    {input: 36, expected: "The ticket price is $20"},
+    {input: "hello", expected: false},
+    {input: true, expected: false},
+]
+
+testGetTicketPrice.forEach((test, index) => {
+    const actual = getTicketPrice(test.input);
+    const result = actual === test.expected ? "Pass" : "Fail";
+
+    console.log(`Test Case ${index + 1}: ${result}`);
+})
+

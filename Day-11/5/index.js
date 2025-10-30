@@ -13,4 +13,4 @@ function objectEquality(obj1, obj2) {
   }
 }
 
-objectEquality({ a: 1, b: 2 }, { a: 3, c: 4 });
+objectEquality({ a: 1, b: 2 }, { a: 3, b: 4 });

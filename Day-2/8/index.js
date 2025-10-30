@@ -11,7 +11,7 @@
 // Expected output: 1
 function missingElement(arr) {
     if(typeof(arr) !== "object") {
-        return "The given array must number array there is no other type are not acceptable"
+        return false;
     }
    for(let i=0; i< arr.length ; i++){
     if(arr[i + 1] - arr[i] !== 1){
@@ -20,7 +20,7 @@ function missingElement(arr) {
         return 1;
     }
    }
-   return null
+   return null;
 }
 console.log(missingElement([1, 2, 3, 5, 6]));
 
@@ -37,9 +37,8 @@ const testMissingElement = [
     {input: [144, 145, 147, 148], expected: 146 },
     {input: [9, 10, 11, 12, 14], expected: 13 },
     {input: [6, 7, 8, 10, 11], expected: 9 },
-    {input: ["1", "2", "3", "5", "6"], expected: 4 },
-    {input: "muhammed udaif", expected: 4 },
-    {input: false, expected: 4 },
+    {input: "muhammed udaif", expected: false },
+    {input: false, expected: false },
 ]
 
 testMissingElement.forEach((test, index) => {

@@ -6,3 +6,4 @@ const progressEl = document.querySelector(".progress");
 containerEl.addEventListener("scroll", () => {
     progressEl.textContent = `Progress : ${containerEl.scrollTop}`;
 })
+

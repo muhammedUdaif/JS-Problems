@@ -11,6 +11,9 @@
 
 
 function passwordChecker(password) {
+    if(typeof(password) !== "string") {
+        return false;
+    }
     if(password.length < 6) {
         console.log("Your password is weak, because of the password contain atleast six charactor");
     }
@@ -21,11 +24,36 @@ function passwordChecker(password) {
     const specialChar = /[^A-Za-z0-9]/.test(password);
      
     if(password.length >=8 && upperCase && lowerCase && numberCase && specialChar) {
-        console.log("Your password is much stroger");
+        return "Strong"
     }else if(password.length >= 6 && numberCase || specialChar) {
-        console.log("Your password is meadium range")
+        return "Medium"
     }else {
-        console.log("Your password is weak, Need to improve your password");
+        return "Weak"
     }
 }
-passwordChecker("Udaif@123");
+passwordChecker("nihi90&");
+
+const testPasswordChecker = [
+    {input: "Udaif#123", expected: "Strong" },
+    {input: "jaois", expected: "Weak" },
+    {input: "12323", expected: "Weak" },
+    {input: "oqyro", expected: "Weak" },
+    {input: "arunloka123", expected: "Medium" },
+    {input: "jofoiu5", expected: "Medium" },
+    {input: "owhih989", expected: "Medium" },
+    {input: "@niabui", expected: "Medium" },
+    {input: "onnaku$", expected: "Medium" },
+    {input: "nihi90&", expected: "Medium" },
+    {input: "Joioi*423", expected: "Strong" },
+    {input: "Okjfb^98u49", expected: "Strong" },
+    {input: "Khyhd%399", expected: "Strong" },
+    {input: "Yjhbfi#9028", expected: "Strong" },
+    {input: 9298478, expected: false },
+]
+
+testPasswordChecker.forEach((test, index) => {
+    const actual = passwordChecker(test.input);
+    const result = actual === test.expected ? "Pass" : "Fail";
+
+    console.log(`Test Case ${index + 1}: ${result}`);
+})

@@ -26,3 +26,17 @@ function highOrder(arr) {
 
 console.log(highOrder([10, 20, 15, 30, 22, 40])); 
 console.log(highOrder([6, 9, 2, 0, 5, 7, 8, 2, 8])); 
+
+const testHighOrder = [
+    {input: [10, 20, 15, 30, 22, 40], expected:[ 10, 20, 30, 40 ] },
+    {input: [6, 9, 2, 0, 5, 7, 8, 2, 8], expected:[  ] },
+]
+
+testHighOrder.forEach((test, index) => {
+    const actual = highOrder(test.input);
+    const result = JSON.stringify(actual) === JSON.stringify(test.expected) ? "Pass" : "Fail";
+
+    console.log(`Test Case ${index + 1}: ${result}`);
+})
+
+
