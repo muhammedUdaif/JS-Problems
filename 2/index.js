@@ -11,10 +11,10 @@ T
 let input = "CAT";
 
 for(let i=0; i<input.length; i++){
-    let temp = "";
+    let temp = [];
     for(let j=i; j<input.length; j++){
-        temp += input[j];
-        if(temp !== "A"){
+        temp[temp.length]= input[j];
+        if(temp[i] !== "A"){
             console.log(temp);
         }
     }

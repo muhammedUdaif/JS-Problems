@@ -38,5 +38,3 @@ testHighOrder.forEach((test, index) => {
 
     console.log(`Test Case ${index + 1}: ${result}`);
 })
-
-
