@@ -1,0 +1,34 @@
+<!-- 2. Build a image carousal / slider. Which should:
+* Auto-slide every 3 seconds
+* Pause on hover
+* Navigation using Next/Prev buttons -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousal</title>
+</head>
+<body>
+    <div class="container" id="container-section">
+       <img src="https://media.istockphoto.com/id/1225664036/photo/mother-and-son-in-bedroom-spend-some-quality-time.jpg?s=612x612&w=0&k=20&c=lO1I6sNyJHgWONh0g7JxQDt763IzDq5zYVooYOzmZgo=" alt="image-1" class="images">
+       <img src="https://img.freepik.com/free-photo/young-couple-having-fun-bed-morning-holding-hands-up-having-fun_285396-9068.jpg?semt=ais_hybrid&w=740&q=80" alt="image-2" class="images">
+       <img src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?cs=srgb&dl=pexels-pixabay-206359.jpg&fm=jpg" alt="image-3" class="images">
+    </div>
+    <button id="Prev">Prev</button>
+    <button id="next">Next</button>
+    <style>
+        .container {
+            position: relative;
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+        .images{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+    <script src="index.js"></script>
+</body>
+</html>
