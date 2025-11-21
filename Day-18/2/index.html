@@ -1,0 +1,133 @@
+<!-- 2. Create a top navigation bar that contains several menu items.
+  When the user hovers over any menu item, a floating drop-down panel should appear. 
+  Each drop-down should include sub-items, and those sub-items should only be visible 
+  when the user hovers over the corresponding drop-down menu. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="menu">
+
+            <li class="menu-item">Products
+                <div class="dropdown">
+                    <div class="dropdown-item">Electronics
+                        <div class="sub-dropdown">
+                            <p>Mobile</p>
+                            <p>Laptops</p>
+                            <p>Cameras</p>
+                        </div>
+                    </div>
+                    <div class="dropdown-item">Clothing
+                        <div class="sub-dropdown">
+                            <p>Men</p>
+                            <p>Women</p>
+                            <p>Kids</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="menu-item">Services
+                <div class="dropdown">
+                    <div class="dropdown-item">Web development
+                        <div class="sub-dropdown">
+                            <p>Front End</p>
+                            <p>Back End</p>
+                            <p>Full Stack</p>
+                        </div>
+                    </div>
+                    <div class="dropdown-item">Mobile App
+                        <div class="sub-dropdown">
+                            <p>Android</p>
+                            <p>IOS</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="menu-item">Contact
+                <div class="dropdown">
+                    <p>Email</p>
+                    <p>Phone</p>
+                    <p>Address</p>
+                </div>
+            </li>
+
+        </ul>
+    </nav>
+    <style>
+        * { 
+            box-sizing:border-box;
+            margin:0;
+            padding:0
+        }
+        .navbar {
+            background:#333;
+            padding:10px 20px
+        }
+        .menu {
+            display:flex;
+            list-style:none;
+            gap:30px
+        }
+        .menu-item {
+            color:#fff;
+            position:relative;
+            cursor:pointer;
+            padding:6px 10px;
+            border-radius:4px;
+        }
+       .menu-item:hover {
+            background:#444
+        }
+       .dropdown {
+            position:absolute;
+            top:100%; 
+            left:0;
+            background:#fff;
+            color: #444;
+            padding:8px;
+            width:200px;
+            border-radius:6px;
+            display:none;
+            box-shadow:0 6px 18px rgba(0,0,0,0.15);
+        }
+       .dropdown-item {
+            padding:8px;
+            position:relative; 
+        }
+       .dropdown-item:hover {
+            background:#f2f2f2;
+            border-radius:4px; 
+            color: #444;
+        }
+        .sub-dropdown{
+            position:absolute;
+            top:0;
+            left:100%;
+            min-width:150px;
+            background:#fff;
+            padding:8px;
+            border-radius:6px;
+            display:none;
+            box-shadow:0 6px 18px rgba(0,0,0,0.15);
+        }
+        .sub-dropdown p {
+            padding:6px 8px;
+            margin:0
+        }
+        .sub-dropdown p:hover {
+            background:#f0f0f0;
+            border-radius:4px
+        }
+
+    </style>
+    <script src="index.js"></script>
+</body>
+</html>
