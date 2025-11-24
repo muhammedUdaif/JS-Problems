@@ -1,0 +1,75 @@
+<!-- 2. Design a tab-based navigation system where users can switch between different 
+ content pages by clicking on the corresponding tabs. 
+ Each page should persist its own state while navigating. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Pages with Tab</title>
+    <style>
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .tab {
+            padding: 10px 18px;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .tab.active {
+            background: blue;
+            color: white;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+            border: 1px solid white;
+            padding: 20px;
+            border-radius: 6px;
+            animation-name: navigation;
+            animation-delay: 0.4s;
+        }
+        @keyframes navigation {
+            from {
+                opacity: 1;
+                transform: translateX(-300px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0px);  
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab active" data-target="page1">Home</div>
+        <div class="tab" data-target="page2">Profile</div>
+        <div class="tab" data-target="page3">Settings</div>
+    </div>
+
+    <div id="page1" class="page active">
+        <h2>Home</h2>
+        <input type="text" placeholder="Type something here..." />
+    </div>
+
+    <div id="page2" class="page">
+        <h2>Profile</h2>
+        <textarea placeholder="Enter your details..."></textarea>
+    </div>
+
+    <div id="page3" class="page">
+        <h2>Settings</h2>
+        <label><input type="checkbox"> Enable Notifications</label>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

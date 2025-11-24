@@ -1,0 +1,62 @@
+<!-- 1.Create a top-right notification banner that features a close icon for closing manually and 
+ automatically hides after 5 seconds. Implement a dummy button to trigger the notification. 
+ When multiple notifications are present, they should be closed in order based on their 
+ creation time, unless manually closed. -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Bar</title>
+</head>
+<body>
+    <button id="my-btn">Show Notification</button>
+
+    <div id="notification-container"></div>
+
+    <style>
+       #notification-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+       }
+
+       .notification {
+        background-color: black;
+        color: #fff;
+        padding: 12px 18px;
+        border-radius: 6px;
+        min-width: 250px;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 0;
+        transform: translateX(20px);
+        animation: slideIn 0.4s forwards;
+       }
+
+       .close-btn {
+        font-weight: bold;
+        float: right;
+        cursor: pointer;
+        font-size: 24px;
+       }
+       @keyframes slideIn {
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+       }
+       @keyframes slideOut {
+          to {
+            opacity: 0;
+            transform: translateX(20px);
+          }
+       }
+     </style>
+     <script src="index.js"> </script>
+</body>
+</html>
