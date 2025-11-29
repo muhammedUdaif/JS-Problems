@@ -1,0 +1,37 @@
+<!-- 8. Create a custom highlighter like the browser find feature, with an input 
+field allowing users to specify which characters to search and highlight. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">          
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Highlighter</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Custom Highlighter</h1>
+    <input type="text" id="searchInput" placeholder="Enter text to highlight">
+    <p id="textContent">The custom highlighter of the paragraph is "muhamed udaif" the profession becomes "front end developer"</p>
+
+    <script>
+        const input = document.getElementById("searchInput");
+        const paragraph = document.getElementById("textContent");
+
+        input.addEventListener("click" , () => {
+            const searchItem = input.value;
+            console.log(searchItem);
+
+            if(searchItem === "muhammmed udaif" || "front end developer") {
+                return `The custome highlighter of the paragraph is <span class="highlight">muhammed udaif</span> the profession becomes <span class>front end developer</span>`
+            }
+        })
+    </script>
+</body>
+</html>
+
+
